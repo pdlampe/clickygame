@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ImageFileNames from "./ImageFileNames";
+import ImageNames from "./imageNames";
 import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
 import ImageBlockListing from "./components/ImageBlockListing";
@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 
 class App extends Component {
   state = {
-    imageFileNames: ImageFileNames,
+    imageNames: ImageNames,
     clickedImages: [],
     score: 0,
     topScore: 0,
@@ -18,7 +18,7 @@ class App extends Component {
 
   componentDidMount() {
     this.setState({
-      imageFileNames: this.shuffle(this.state.imageFileNames)
+      imageNames: this.shuffle(this.state.imageNames)
     }, () => {
       console.log("Shuffled the images when the game starts");
     });
@@ -31,7 +31,7 @@ class App extends Component {
     const wasImageClickedBefore = this.imageClickedBefore(clickedImageFileName);
     if (wasImageClickedBefore) {
       this.setState({
-        imageFileNames: this.shuffle(this.state.imageFileNames),
+        imageNames: this.shuffle(this.state.imageNames),
 
         clickedImages: [],
         score: 0,
@@ -42,9 +42,9 @@ class App extends Component {
       });
     } else {
       let newScore = this.state.score + 1;
-      if (newScore === this.state.imageFileNames.length) {
+      if (newScore === this.state.imageNames.length) {
         this.setState({
-          imageFileNames: this.shuffle(this.state.imageFileNames),
+          imageNames: this.shuffle(this.state.imageNames),
 
           clickedImages: [],
           score: 0,
@@ -57,7 +57,7 @@ class App extends Component {
         clickedImagesCopy.push(clickedImageFileName);
         const newTopScore = (newScore > this.state.topScore) ? newScore : this.state.topScore;
         this.setState({
-          imageFileNames: this.shuffle(this.state.imageFileNames),
+          imageNames: this.shuffle(this.state.imageNames),
 
           clickedImages: clickedImagesCopy,
           score: newScore,
@@ -101,7 +101,7 @@ class App extends Component {
       <div>
         <Navbar score={this.state.score} topScore={this.state.topScore} feedback={this.state.feedback} gameStatus={this.state.gameStatus} />
         <Banner />
-        <ImageBlockListing imageFileNames={this.state.imageFileNames} clickHandler={this.handleClick} gameStatus={this.state.gameStatus} />
+        <ImageBlockListing imageNames={this.state.imageNames} clickHandler={this.handleClick} gameStatus={this.state.gameStatus} />
         <Footer />
       </div>
     );
