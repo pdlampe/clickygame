@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ImageNames from "./imageNames";
 import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
-import ImageBlockListing from "./components/ImageBlockListing";
+import ImageInventory from "./components/ImageInventory";
 import Footer from "./components/Footer";
 
 
@@ -101,7 +101,7 @@ class App extends Component {
       <div>
         <Navbar score={this.state.score} topScore={this.state.topScore} feedback={this.state.feedback} gameStatus={this.state.gameStatus} />
         <Banner />
-        <ImageBlockListing imageNames={this.state.imageNames} clickHandler={this.handleClick} gameStatus={this.state.gameStatus} />
+        <ImageInventory imageNames={this.state.imageNames} clickHandler={this.handleClick} gameStatus={this.state.gameStatus} />
         <Footer />
       </div>
     );

@@ -1,5 +1,5 @@
 import React from "react";
-import "./ImageInventory.css";
+//import "./ImageInventory.css";
 import ImageBlock from "../ImageBlock";
 
 const ImageInventory = (props) => (
