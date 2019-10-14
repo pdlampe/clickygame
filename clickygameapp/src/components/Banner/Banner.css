@@ -1,0 +1,13 @@
+.jumbotron {
+	
+	background: url("xxxxxx.jpg") center center no-repeat fixed #464646;
+	font-family: Serif, Monospace;
+	height: 200px;
+	width: auto;
+	opacity: 0.2;
+}
+
+h1, h4 {
+	color: #ffffff;
+	font-weight: bold;
+}
