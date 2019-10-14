@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ImageNames from "./imageNames";
+import ImageNames from "./ImageNames";
 import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
 import ImageInventory from "./components/ImageInventory";
@@ -26,9 +26,9 @@ class App extends Component {
 
   handleClick = event => {
 
-    const clickedImageFileName = event.target.alt;
+    const clickedImageName = event.target.alt;
 
-    const wasImageClickedBefore = this.imageClickedBefore(clickedImageFileName);
+    const wasImageClickedBefore = this.imageClickedBefore(clickedImageName);
     if (wasImageClickedBefore) {
       this.setState({
         imageNames: this.shuffle(this.state.imageNames),
@@ -54,7 +54,7 @@ class App extends Component {
         });
       } else {
         const clickedImagesCopy = this.state.clickedImages.slice();
-        clickedImagesCopy.push(clickedImageFileName);
+        clickedImagesCopy.push(clickedImageName);
         const newTopScore = (newScore > this.state.topScore) ? newScore : this.state.topScore;
         this.setState({
           imageNames: this.shuffle(this.state.imageNames),
@@ -71,9 +71,9 @@ class App extends Component {
     }
   };
 
-  imageClickedBefore = (clickedImageFileName) => {
+  imageClickedBefore = (clickedImageName) => {
     for (let index = 0; index < this.state.clickedImages.length; index++) {
-      if (this.state.clickedImages[index] === clickedImageFileName) {
+      if (this.state.clickedImages[index] === clickedImageName) {
         return true;
       }
     }

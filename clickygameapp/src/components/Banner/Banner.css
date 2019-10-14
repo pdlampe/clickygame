@@ -2,12 +2,13 @@
 h1, h4 {
 	color: #ffffff;
 	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .jumbotron {
 	
 	background: url("binoculars.jpg") center center no-repeat fixed;
 	font-family: Serif, Monospace;
-	height: 600px;
+	height: 255px;
 	width: auto;
 }
