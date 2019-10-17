@@ -35,7 +35,7 @@ class App extends Component {
 
         clickedImages: [],
         score: 0,
-        feedback: "Game over! You guessed the same image twice!",
+        feedback: "You guessed the same image twice. Game over!",
         gameStatus: 2
       }, () => {
 
@@ -49,7 +49,7 @@ class App extends Component {
           clickedImages: [],
           score: 0,
           topScore: newScore,
-          feedback: "Congrats! You guessed all of the images correctly!",
+          feedback: "You guessed all of the images correctly!",
           gameStatus: 1
         });
       } else {
@@ -62,7 +62,7 @@ class App extends Component {
           clickedImages: clickedImagesCopy,
           score: newScore,
           topScore: newTopScore,
-          feedback: "Yes! You guessed the image correctly!",
+          feedback: "You guessed the image correctly! Keep going!",
           gameStatus: 0
         }, () => {
 
